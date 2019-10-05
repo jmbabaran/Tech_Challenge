@@ -1,0 +1,57 @@
+﻿@model IEnumerable<PatientAssistance.Models.PatientAssistance>
+
+@{
+    ViewBag.Title = "Patient Booking List";
+}
+
+    <h2>Patient Booking List</h2>
+
+<p>
+    @Html.ActionLink("Book New Appointment", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Level of Pain
+        </th>
+        <th>
+            Hospital Name
+        </th>
+        <th>
+            Average Process Time
+        </th>
+        <th>
+            Patient Count
+        </th>
+        <th>
+            Waiting Time
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.LevelOfPain)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HospitalName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AveProcessTime) minutes
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PatientCount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WaitingTime) minutes
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>
