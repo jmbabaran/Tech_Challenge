@@ -69,3 +69,56 @@ textarea {
 .dropdown:hover .dropbtn {
     background-color: #3e8e41;
 }
+
+
+.pain_lev {
+    height: 80px;
+    width: 300px;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    z-index: 1;
+}
+
+    .pain_lev:hover {
+        background-color: #ddd;
+    }
+.pain_lev1 {
+    background: url(../Images/level1.ico) no-repeat;
+    background-position: center;
+}
+
+.pain_lev2 {
+    background: url(../Images/level2.ico) no-repeat;
+    background-position: center;
+}
+
+.pain_lev3 {
+    background: url(../Images/level3.ico) no-repeat;
+    background-position: center;
+}
+
+.pain_lev4 {
+    background: url(../Images/level4.ico) no-repeat;
+    background-position: center;
+}
+
+.pain_lev5 {
+    background: url(../Images/level5.ico) no-repeat;
+    background-position: center;
+}
+
+.hospitals {
+    height: 80px;
+    width: 300px;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    z-index: 1;
+}
+
+    .hospitals:hover {
+        background-color: #ddd;
+    }
+
+.selected {
+    background-color: #ddd;
+}

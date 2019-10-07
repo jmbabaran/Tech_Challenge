@@ -23,7 +23,9 @@ namespace PatientAssistance.Controllers
         static PatientAssistancesController()
         {
             Utils utils = new Utils();
-            _hospitals = utils.GetSortedHospital(1);
+            
+            //_hospitals = utils.GetSortedHospital(1);
+            _hospitals = utils.GetHospitalList();
             _illnesses = utils.GetIllnessList();
 
 
@@ -68,6 +70,7 @@ namespace PatientAssistance.Controllers
         {
             ViewBag._hospitals = _hospitals;
             ViewBag._illnesses = _illnesses;
+            ViewData["hospitals"] = _hospitals;
 
             return View();
         }

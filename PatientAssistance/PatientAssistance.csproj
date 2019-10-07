@@ -183,6 +183,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\level1.ico" />
+    <Content Include="Images\level2.ico" />
+    <Content Include="Images\level3.ico" />
+    <Content Include="Images\level4.ico" />
+    <Content Include="Images\level5.ico" />
     <Content Include="Scripts\BookAppointment.js" />
     <Content Include="Scripts\BookHospital.jsx" />
     <Content Include="Scripts\bootstrap.js" />
