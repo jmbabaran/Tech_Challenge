@@ -33,12 +33,17 @@ function ComputeTimeInHours(minutes) {
 
     var time = "";
     if (minutes < 60) {
-        time = minutes + " mins";
+        time = minutes + " min(s)";
     }
     else {
-        var hrs = minutes / 60;
+        var hrs = Math.floor(minutes / 60);
+        var min = "";
+        if (minutes % 60 >= 30) {
+            min = ".5"
+ 
+        }
         // TODO: calculate decimal hours
-        time = hrs + " hrs";
+        time = hrs + min + " hr(s)";
     }
 
     return time;
