@@ -93,7 +93,8 @@ function populateHospital() {
     var levelOfPain = jQuery("#LevelOfPain").val();
     for (var item in hospitals) {
         var hospitalDetails = hospitals[item];
-        var hosp = jQuery("<div id='" + 1 + "'>" + hospitalDetails.name + "    " + hospitalDetails.totalWaitingTimeInHrs + "</div> ");
+        //var hosp = jQuery("<div id='" + 1 + "'>" + hospitalDetails.name + "    " + hospitalDetails.totalWaitingTimeInHrs + "</div> ");
+        var hosp = jQuery("<div> <table> <tr> <th style='width:70%'>" + hospitalDetails.name + "</th> <th class='waiting-time'> Waiting Time: " + hospitalDetails.totalWaitingTimeInHrs + "</th> </tr> </table> </div>");
         hosp.data("name", hospitalDetails.name);
 
         for (var waitlist in hospitalDetails.waitingList) {
@@ -129,6 +130,8 @@ function setFieldsFromHospitals() {
         jQuery("#hospital").find(".selected").removeClass("selected");
         jQuery(this).addClass("selected");
         jQuery("#btnSubmit").attr("disabled", false);
+        jQuery("#btnSubmit").addClass("btn-enabled");
+
  
     });
 }

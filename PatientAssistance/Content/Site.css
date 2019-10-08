@@ -126,3 +126,28 @@ textarea {
 .selected {
     background-color: #ddd;
 }
+
+.btnstyle {
+    display :block !important;
+    
+}
+
+.btn-disabled {
+    color: white !important;
+}
+
+.btn-enabled {
+    color: black !important;
+}
+
+.waiting-time {
+    width: 50%;
+    font-size: x-small;
+    color: maroon;
+    padding-left: 10px;
+}
+
+.chevron {
+    background: url(../Images/chevron.ico) no-repeat;
+    background-position: right;
+}

@@ -183,6 +183,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\chevron.ico" />
     <Content Include="Images\level1.ico" />
     <Content Include="Images\level2.ico" />
     <Content Include="Images\level3.ico" />
