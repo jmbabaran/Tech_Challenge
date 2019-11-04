@@ -14,39 +14,7 @@ namespace PatientAssistance.Common
     public class Utils
     {
 
-        public int CalculateWaitingTime ( int peopleWaiting, int aveProcessTime)
-        {
-            return peopleWaiting * aveProcessTime;
-        }
-
-        public int GetCalculatedWaitingTime()
-        {
-            return 1;
-        }
-
-        public string ComputeTimeInHours(int minutes)
-        {
-
-            string time = "";
-
-            if (minutes < 60)
-            {
-                time = minutes + " mins";
-            }
-            else
-            {
-                var hrs = minutes / 60;
-                // TODO: calculate decimal hours
-                time = hrs + " hrs";
-            }
-
-            
-
-
-            return time;
-
-        }
-
+ 
         public string GetAPIResponse( string url)
         {
             var request = (HttpWebRequest.Create(url));
@@ -89,36 +57,6 @@ namespace PatientAssistance.Common
 
         }
 
-        public List<Hospital> GetHospitalsWithTotalTime( int levelOfPain)
-        {
-            List<Hospital> hospitalList = new List<Hospital>();
-            hospitalList = GetHospitalList();
-            foreach (var item in hospitalList)
-            {
-                foreach (var waitlist in item.waitingList)
-                {
-                    if (waitlist.levelOfPain == levelOfPain)
-                    {
-                        //Compute Waiting Time according to levelOfPain
-                        item.totalWaitingTime = waitlist.patientCount * waitlist.averageProcessTime;
-                        item.totalWaitingTimeInHrs = this.ComputeTimeInHours(item.totalWaitingTime);
-                        break;
-                    }
-                }
-            }
-
-            return hospitalList;
-        }
-
-        public List<Hospital> GetSortedHospital(int levelOfPain)
-        {
-            List<Hospital> hospitalList = new List<Hospital>();
-            List<Hospital> sortedHospital = new List<Hospital>();
-            hospitalList = GetHospitalsWithTotalTime(levelOfPain);
-            sortedHospital.AddRange(hospitalList.OrderBy(x => x.totalWaitingTime));
-
-            return sortedHospital;
-        }
 
         public List<Illness> GetIllnessList()
         {

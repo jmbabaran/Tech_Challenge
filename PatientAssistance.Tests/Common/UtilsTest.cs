@@ -16,21 +16,6 @@ namespace PatientAssistance.Tests.Controllers
     [TestClass]
     public class UtilsTest
     {
-        [TestMethod]
-        public void CalculateWaitingTimeTest()
-        {
-            // Arrange
-            Utils utils = new Utils();
-            int peopleWaiting = 1;
-            int aveProcessTime = 1;
-            
-
-            // Act
-            var result = utils.CalculateWaitingTime(peopleWaiting, aveProcessTime);
-
-            // Assert
-            Assert.AreEqual(result, 1);
-        }
 
         [TestMethod]
         public void GetAPIResponseTest()
@@ -61,36 +46,6 @@ namespace PatientAssistance.Tests.Controllers
 
             // Act
             var result = utils.ParseObjectDetails(responseString);
-
-            // Assert
-            Assert.IsNotNull(result);
-            //TODO: Add result checking
-            //Assert.AreEqual(result, responseString);
-        }
-
-        [TestMethod]
-        public void GetHospitalsWithTotalTimeTest()
-        {
-            // Arrange
-            Utils utils = new Utils();
-
-            // Act
-            var result = utils.GetHospitalsWithTotalTime(0);
-
-            // Assert
-            Assert.IsNotNull(result);
-            //TODO: Add result checking
-            //Assert.AreEqual(result, responseString);
-        }
-
-        [TestMethod]
-        public void GetSortedHospitalTest()
-        {
-            // Arrange
-            Utils utils = new Utils();
-
-            // Act
-            var result = utils.GetSortedHospital(0);
 
             // Assert
             Assert.IsNotNull(result);

@@ -24,7 +24,6 @@ namespace PatientAssistance.Controllers
         {
             Utils utils = new Utils();
             
-            //_hospitals = utils.GetSortedHospital(1);
             _hospitals = utils.GetHospitalList();
             _illnesses = utils.GetIllnessList();
 
@@ -37,17 +36,12 @@ namespace PatientAssistance.Controllers
             return Json(_hospitals, JsonRequestBehavior.AllowGet);
         }
 
-        // GET: Hospital Booking
-        //public ActionResult BookHospital()
-        //{
-        //    return View();
-        //}
+        
 
         // GET: PatientAssistances
         public ActionResult Index()
         {
             return View(db.PatientAssistances.ToList());
-            //return null;
         }
 
         // GET: PatientAssistances/Details/5
@@ -70,7 +64,6 @@ namespace PatientAssistance.Controllers
         {
             ViewBag._hospitals = _hospitals;
             ViewBag._illnesses = _illnesses;
-            ViewData["hospitals"] = _hospitals;
 
             return View();
         }
@@ -150,7 +143,7 @@ namespace PatientAssistance.Controllers
         }
 
         protected override void Dispose(bool disposing)
-        {
+            {
             if (disposing)
             {
                 db.Dispose();
